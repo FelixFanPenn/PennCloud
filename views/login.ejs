@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <head>
+    <meta charset="utf-8">
+    <title>Penn Cloud Login</title>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <style>
+            .fa {
+                padding: 20px;
+                font-size: 30px;
+                width: 30px;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 50%;
+            }
+            body{
+                font-family: arial;
+                margin: 0;
+            }
+            nav{
+                background: #ff5353;
+                padding: 20px 10px;
+            }
+            nav ul{
+                max-width: 960px;
+                margin: 0 auto;
+                padding: 0;
+            }
+            nav li{
+                list-style-type: none;
+                display: inline-block;
+                margin: 0 10px 0 0;
+            }
+            nav a{
+                color: #fff;
+                font-size: 18px;
+                background: rgba(255,255,255,0.2);
+                text-decoration: none;
+                padding: 10px;
+                display: block;
+            }
+            main, header{
+                max-width: 960px;
+                margin: 30px auto;
+                padding: 0 10px;
+                color: #333;
+            }
+            .google-btn{
+                color: #fff;
+                text-decoration: none;
+                font-size: 18px;
+                padding: 10px;
+                background: #ff5353;
+            }
+
+            .facebook-btn{
+                color: #fff;
+                text-decoration: none;
+                font-size: 18px;
+                padding: 10px;
+                background: #263961;
+            }
+
+            html {
+              margin: 40px auto;
+              text-align: center;
+            }
+            .btn-googleplus {
+          	  background: #E93F2E;
+          	  border-radius: 0;
+          	  color: #fff;
+          	  border-width: 1px;
+          	  border-style: solid;
+          	  border-color: #b72213;
+          	}
+          	.btn-googleplus:link, .btn-googleplus:visited {
+          	  color: #fff;
+          	}
+          	.btn-googleplus:active, .btn-googleplus:hover {
+          	  background: #b72213;
+          	  color: #fff;
+          	}
+
+            .btn-facebook {
+          	  background: #3B5998;
+          	  border-radius: 0;
+          	  color: #fff;
+          	  border-width: 1px;
+          	  border-style: solid;
+          	  border-color: #263961;
+          	}
+          	.btn-facebook:link, .btn-facebook:visited {
+          	  color: #fff;
+          	}
+          	.btn-facebook:active, .btn-facebook:hover {
+          	  background: #263961;
+          	  color: #fff;
+          	}
+        </style>
+  </head>
+  <body>
+      <nav>
+            <ul>
+              <li><a href="/">Homepage</a></li>
+              <% if (user) { %>
+                <li><a href="/auth/logout">Logout</a></li>
+              <% } else { %>
+                <li><a href="/auth/login">Login</a></li>
+              <% } %>
+              <li><a href="/profile">Profile</a></li>
+            </ul>
+        </nav>
+        <header>
+            <h1>Login using...</h1>
+        </header>
+        <main>
+            <a class="google-btn" href="/auth/google">Google+</a>
+            <a class="facebook-btn" href="/auth/facebook">Facebook+</a>
+
+            <a href="/auth/google" class="fa fa-google"></a>
+            <a href="/auth/facebook" class="fa fa-facebook"></a>
+
+            <a href="/auth/google" title="Google+" class="btn btn-googleplus btn-lg"><i class="fa fa-google-plus fa-fw"></i> Google+</a>
+            <a href="/auth/facebook" title="Facebook" class="btn btn-facebook btn-lg"><i class="fa fa-facebook fa-fw"></i> Facebook</a>
+        </main>
+  </body>
+</html>
